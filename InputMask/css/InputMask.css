@@ -1,0 +1,28 @@
+.InputMaskNamespace div {
+	width: 100%;
+}
+
+.InputMaskNamespace input{
+	width: 100%;
+    float:none;
+    outline: none !important;
+    line-height: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid transparent;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+}
+
+.InputMaskNamespace input:hover, .InputMaskNamespace input:focus{
+	border-color:rgb(102, 102, 102);
+    background-color: white;
+}
+
+.InputMaskNamespace input.disabled:hover {
+	border-color:rgb(226, 226, 226);
+    background-color: rgb(226, 226, 226);
+}

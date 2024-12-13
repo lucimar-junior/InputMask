@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="InputMaskNamespace" constructor="InputMask" version="0.0.1" display-name-key="InputMask" description-key="PCF Control that allows input masking" control-type="standard" >
+    <!--external-service-usage node declares whether this 3rd party PCF control is using external service or not, if yes, this control will be considered as premium and please also add the external domain it is using.
+    If it is not using any external service, please set the enabled="false" and DO NOT add any domain below. The "enabled" will be false by default.
+    Example1:
+      <external-service-usage enabled="true">
+        <domain>www.Microsoft.com</domain>
+      </external-service-usage>
+    Example2:
+      <external-service-usage enabled="false">
+      </external-service-usage>
+    -->
+    <external-service-usage enabled="false">
+      <!--UNCOMMENT TO ADD EXTERNAL DOMAINS
+      <domain></domain>
+      <domain></domain>
+      -->
+    </external-service-usage>
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="value" display-name-key="value" description-key="Field value" of-type-group="textAndPhone" usage="bound" required="true" />
+    <property name="regexPattern" display-name-key="regexPattern" description-key="Regex pattern to validate" of-type="SingleLine.TextArea" usage="input" required="true" />
+    <property name="maskTemplate" display-name-key="maskTemplate" description-key="Mask that will be applied to string" of-type="SingleLine.TextArea" usage="input" required="true" />
+    <property name="errorMessage" display-name-key="errorMessage" description-key="Error message to display when the user input is incorrect" of-type="SingleLine.TextArea" usage="input" required="true" />
+    <property name="maskedValue" display-name-key="maskedValue" description-key="Masked value" of-type="SingleLine.Text" usage="output" required="false" />
+    <type-group name="textAndPhone">
+      <type>SingleLine.Text</type>
+      <type>SingleLine.Phone</type>
+    </type-group>
+    <resources>
+      <code path="index.ts" order="1"/>
+      <css path="css/InputMask.css" order="1" />
+      <!-- 
+      <resx path="strings/InputMask.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>
